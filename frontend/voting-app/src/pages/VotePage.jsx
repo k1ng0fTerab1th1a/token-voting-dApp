@@ -282,14 +282,14 @@ const VotePage = () => {
                     <button 
                         className="action-btn"
                         onClick={handleCommit}
-                        disabled={isLoading || totalPoints !== 100}
+                        disabled={(isLoading || totalPoints !== 100) && !localSecret}
                     >
                         {isLoading ? "Processing..." : "Commit Vote"}
                     </button>
                     
                     {localSecret && (
                         <div className="stored-data-box">
-                            You have already saved a vote locally. You can update it by committing again.
+                            You have already saved a vote locally.
                         </div>
                     )}
                 </div>
